@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class Activities - Home</title>
+  <link rel="stylesheet" href="styles.css">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stocks.html">Stocks</a></li>
+        <li><a href="dogs.html">Dogs</a></li>
+      </ul>
+    </nav>
+
+    <header>
+      <h1>Riya's Activities Website</h1>
+      <p>Welcome to my interactive web app! Use the buttons below to navigate to different sections of my website.</p>
+    </header>
+
+    <div class="button-container">
+      <a href="stocks.html" class="custom-button">Stocks</a>
+      <a href="dogs.html" class="custom-button">Dogs</a>
+    </div>
+
+    <div class="quote-container">
+      <p class="quote-text" id="quote-text">Loading inspirational quote...</p>
+      <p class="quote-author" id="quote-author"></p>
+    </div>
+  </div>
+
+  <div class="audio-container">
+    <h3 class="audio-title">Voice Commands</h3>
+    <div class="audio-instructions">
+      <p>You can use the following voice commands on this website:</p>
+      <ul>
+        <li>"Hello" - Will display a Hello World alert</li>
+        <li>"Change the color to [color]" - Changes the background color</li>
+        <li>"Navigate to [page]" - Navigate to Home, Stocks, or Dogs page</li>
+      </ul>
+    </div>
+    <div class="audio-buttons">
+      <button id="turn-on-audio" class="audio-button">Turn On Audio</button>
+      <button id="turn-off-audio" class="audio-button">Turn Off Audio</button>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+  <script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      fetch('https://type.fit/api/quotes')
+        .then(response => response.json())
+        .then(data => {
+          const random = data[Math.floor(Math.random() * data.length)];
+          document.getElementById('quote-text').textContent = `"${random.text}"`;
+          document.getElementById('quote-author').textContent = `— ${random.author || 'Unknown'}`;
+        })
+        .catch(error => {
+          console.error('Error fetching quote:', error);
+          document.getElementById('quote-text').textContent = 'Failed to load quote.';
+          document.getElementById('quote-author').textContent = '';
+        });
+    });
+  </script>
+  
+</body>
+</html>
