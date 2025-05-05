@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class Activities - Dogs</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-slider/1.0.1/simpleslider.min.js"></script>
+  <style>
+    .slider {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+    }
+    
+    .slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stocks.html">Stocks</a></li>
+        <li><a href="dogs.html">Dogs</a></li>
+      </ul>
+    </nav>
+
+    <header>
+      <h1>Dog Information</h1>
+      <p>View adorable dog images and learn about different dog breeds.</p>
+    </header>
+
+    <div class="carousel-container">
+      <div id="dog-carousel" class="slider">
+      </div>
+    </div>
+
+    <h2>Dog Breeds</h2>
+    <div id="dog-breeds" class="dog-breeds">
+    </div>
+
+    <div id="breed-info" class="breed-info">
+    </div>
+  </div>
+
+  <div class="audio-container">
+    <h3 class="audio-title">Voice Commands</h3>
+    <div class="audio-instructions">
+      <p>You can use the following voice commands on this website:</p>
+      <ul>
+        <li>"Hello" - Will display a Hello World alert</li>
+        <li>"Change the color to [color]" - Changes the background color</li>
+        <li>"Navigate to [page]" - Navigate to Home, Stocks, or Dogs page</li>
+        <li>"Load Dog Breed [name]" - Displays information about the specified dog breed</li>
+      </ul>
+    </div>
+    <div class="audio-buttons">
+      <button id="turn-on-audio" class="audio-button">Turn On Audio</button>
+      <button id="turn-off-audio" class="audio-button">Turn Off Audio</button>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+  <script src="dogs.js"></script>
+</body>
+</html>
