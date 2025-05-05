@@ -1,4 +1,4 @@
-const POLYGON_API_KEY = 'FMLNBAHeeYkTAKW98NgfhpqpeiLoFe48'; // Replace with your actual API key
+const POLYGON_API_KEY = 'FMLNBAHeeYkTAKW98NgfhpqpeiLoFe48'; 
 let stockChart = null;
 
 function pageSpecificCommands() {
